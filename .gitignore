@@ -1,2 +1,7 @@
 /carmona_nestor
 *.zip
+*.pt
+/lin2d_exp_deep10/
+/__pycache__/
+/.ipynb_checkpoints/
+*.pyc

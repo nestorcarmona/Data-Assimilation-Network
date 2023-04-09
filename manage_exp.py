@@ -382,14 +382,15 @@ def test(
     y0 = obs(x0).sample(sample_shape=torch.Size([1])).squeeze(0)
     ha0 = get_ha0(b_size, h_dim)
 
-    x_test = []
-    y_test = []
-    list_qa_test = []
+    x_test = [x0]
+    y_test = [y0]
+    list_qa_test = [net.c.forward(ha0)]
 
     x = x0
     y = y0
-
     ha = ha0
+
+    net.eval()
 
     for t in range(1, T+1):
         # on the fly data generation
